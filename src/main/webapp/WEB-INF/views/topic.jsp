@@ -10,9 +10,9 @@
 <body>
 <h1>All Courses</h1>
 	<table style="margin-left: 20px">
-	<c:forEach var="course" items="${allCourses}">
+	<c:forEach var="topic" items="${allTopics}">
 	<tr>  
-   		 <td>&bull;&nbsp;&nbsp;&nbsp;<a href="/course?id=${course.courseId }"><c:out value="${course.courseName}"/></a></td>
+   		 <td>&bull;&nbsp;&nbsp;&nbsp;<a href="/topic?id=${topic.topicId }"><c:out value="${topic.topicName}"/></a></td>
    	</tr> 
 	</c:forEach>  
 	</table>

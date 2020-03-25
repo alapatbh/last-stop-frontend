@@ -8,11 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>All Courses</h1>
+<h1>All Questions</h1>
 	<table style="margin-left: 20px">
-	<c:forEach var="course" items="${allCourses}">
+	<c:forEach var="ques" items="${allQuestions}">
 	<tr>  
-   		 <td>&bull;&nbsp;&nbsp;&nbsp;<a href="/course?id=${course.courseId }"><c:out value="${course.courseName}"/></a></td>
+   		 <td>&bull;&nbsp;&nbsp;&nbsp;<c:out value="${ques.question}"/></td>
    	</tr> 
 	</c:forEach>  
 	</table>
