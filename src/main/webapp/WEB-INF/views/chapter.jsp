@@ -6,15 +6,36 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Chapters</title>
+<script>
+function validate(){
+	var question = document.getElementById("chapterFeildId").value;
+	if(question == ""){
+		alert("please write a chapter name before submitting!");
+		return false;
+	}
+	return true;
+}
+</script>
 </head>
 <body>
-	<h1> Chapters of </h1>
+	<h1>Chapters</h1>
 	<table style="margin-left: 20px">
 	<c:forEach var="chapter" items="${allChapters}">
 	<tr>  
    		 <td>&bull;&nbsp;&nbsp;&nbsp;<a href="/chapter?id=${chapter.chapterId }"><c:out value="${chapter.chapterName}"/></a></td>
    	</tr> 
-	</c:forEach>  
+	</c:forEach>
+	<form action="insertChapter" onsubmit="return validate();">
+	<tr>
+		<td>
+			<input type="text" name="chapterName" id="chapterFeildId" >
+			<input type="hidden" name="courseId" value="${courseIdInput }">
+		</td>
+	</tr>
+	<tr>
+		<td><input type="submit" value="submit"> </td>
+	</tr>
+	</form>   
 	</table>
 </body>
 </html>

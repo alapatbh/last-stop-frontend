@@ -6,15 +6,37 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<script>
+function validate(){
+	var question = document.getElementById("courseFieldId").value;
+	if(question == ""){
+		alert("please write a Course name before submitting!");
+		return false;
+	}
+	return true;
+}
+</script>
+
 </head>
 <body>
-<h1>All Courses</h1>
+<h1>Courses</h1>
 	<table style="margin-left: 20px">
 	<c:forEach var="course" items="${allCourses}">
 	<tr>  
    		 <td>&bull;&nbsp;&nbsp;&nbsp;<a href="/course?id=${course.courseId }"><c:out value="${course.courseName}"/></a></td>
    	</tr> 
-	</c:forEach>  
+	</c:forEach>
+	<form action="insertCourse" onsubmit="return validate();">
+	<tr>
+		<td>
+			<input type="text" name="courseName" id="courseFieldId" >
+		</td>
+	</tr>
+	<tr>
+		<td><input type="submit" value="submit"> </td>
+	</tr>
+	</form>   
+	  
 	</table>
 </body>
 </html>

@@ -5,7 +5,14 @@ public class Topic {
 	private int topicId;
 	private int chapterId;
 	private String topicName;
-
+	
+	public Topic() {}
+	
+	public Topic(String topicName, int chapterId) {
+		this.topicName=topicName;
+		this.chapterId=chapterId;
+	}
+	
 	public int getTopicId() {
 		return topicId;
 	}

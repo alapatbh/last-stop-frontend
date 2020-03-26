@@ -5,6 +5,12 @@ public class Chapter {
 	private int chapterId;
 	private String chapterName;
 	private int courseId;
+	
+	public Chapter() {}
+	public Chapter(String chapterName, int courseId) {
+		this.chapterName=chapterName;
+		this.courseId=courseId;
+	}
 
 	public int getChapterId() {
 		return chapterId;

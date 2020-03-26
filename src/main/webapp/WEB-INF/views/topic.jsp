@@ -6,15 +6,37 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<script>
+function validate(){
+	var question = document.getElementById("topicFieldId").value;
+	if(question == ""){
+		alert("please write a topic name before submitting!");
+		return false;
+	}
+	return true;
+}
+</script>
+
 </head>
 <body>
-<h1>All Courses</h1>
+<h1>Topics</h1>
 	<table style="margin-left: 20px">
 	<c:forEach var="topic" items="${allTopics}">
 	<tr>  
-   		 <td>&bull;&nbsp;&nbsp;&nbsp;<a href="/topic?id=${topic.topicId }"><c:out value="${topic.topicName}"/></a></td>
+   		 <td>&bull;&nbsp;&nbsp;&nbsp;<a href="/topic?id=${topic.topicId}">${topic.topicName }</a> </td>
    	</tr> 
-	</c:forEach>  
+	</c:forEach>
+	<form action="insertTopic" onsubmit="return validate();">
+	<tr>
+		<td>
+			<input type="text" name="topicName" id="topicFieldId" >
+			<input type="hidden" name="chapterId" value="${chapterIdInput }">
+		</td>
+	</tr>
+	<tr>
+		<td><input type="submit" value="submit"> </td>
+	</tr>
+	</form>  
 	</table>
 </body>
 </html>

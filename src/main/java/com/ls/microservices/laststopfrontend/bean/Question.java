@@ -2,20 +2,28 @@ package com.ls.microservices.laststopfrontend.bean;
 
 public class Question {
 	
-	private int questionId;
-	private int topicId;
+	/*private int questionId;
+	*/private int topicId;
 	private String question;
 	private char isPublic;
 	private char enable;
+	private char difficulty;
+	
+	public char getDifficulty() {
+		return difficulty;
+	}
 
-	public int getQuestionId() {
+	public void setDifficulty(char difficulty) {
+		this.difficulty = difficulty;
+	}
+/*	public int getQuestionId() {
 		return questionId;
 	}
 
 	public void setQuestionId(int questionId) {
 		this.questionId = questionId;
 	}
-
+*/
 	public int getTopicId() {
 		return topicId;
 	}
@@ -48,4 +56,11 @@ public class Question {
 		this.enable = enable;
 	}
 
+	@Override
+	public String toString() {
+		return "Question [questionId=" + null + ", topicId=" + topicId + ", question=" + question + ", isPublic="
+				+ isPublic + ", enable=" + enable + ", difficulty=" + difficulty + "]";
+	}
+	
+	
 }

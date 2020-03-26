@@ -5,6 +5,11 @@ public class Course {
 	private int courseId;
 	private String courseName;
 	
+	public Course() {}
+	
+	public Course(String courseName) {
+		this.courseName= courseName;
+	}
 	public int getCourseId() {
 		return courseId;
 	}
