@@ -22,7 +22,7 @@ public class LastStopFrontendController {
 	
 	@RequestMapping("/home")
 	public String home(Model model) {
-		System.out.println("bhanu");
+		//System.out.println("bhanu");
 		model.addAttribute("allCourses", new RestTemplate().getForObject(Constants.REST_URL+"Courses/get", Course[].class));
 		return "home";
 	}
@@ -78,12 +78,13 @@ public class LastStopFrontendController {
 	
 	@RequestMapping("/insertQuestion")
 	public String insertQuestion(@RequestParam("question") String question, Model model,
-			@RequestParam("id") String id,@RequestParam("difficulty") char difficulty) {
+			@RequestParam("id") String id,@RequestParam("difficulty") char difficulty, @RequestParam("answer") String answer) {
 		ques.setEnable('y');
 		ques.setIsPublic('y');
 		ques.setQuestion(question);
 		ques.setTopicId(Integer.parseInt(id));
 		ques.setDifficulty(difficulty);
+		ques.setAnswers(answer);		
 		new RestTemplate().postForObject(Constants.REST_URL+"Questions/post", ques, String.class);
 	
 		model.addAttribute("topicId", id);

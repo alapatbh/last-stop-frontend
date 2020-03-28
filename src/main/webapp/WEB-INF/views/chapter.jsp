@@ -33,7 +33,7 @@ function validate(){
 		</td>
 	</tr>
 	<tr>
-		<td><input type="submit" value="submit"> </td>
+		<td><input type="submit" value="Add Chapter"> </td>
 	</tr>
 	</form>   
 	</table>

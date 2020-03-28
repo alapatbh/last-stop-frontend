@@ -3,12 +3,22 @@ package com.ls.microservices.laststopfrontend.bean;
 public class Question {
 	
 	/*private int questionId;
-	*/private int topicId;
+	*/
+	private int topicId;
 	private String question;
 	private char isPublic;
 	private char enable;
 	private char difficulty;
+	private String answers;
 	
+	public String getAnswers() {
+		return answers;
+	}
+
+	public void setAnswers(String answers) {
+		this.answers = answers;
+	}
+
 	public char getDifficulty() {
 		return difficulty;
 	}
