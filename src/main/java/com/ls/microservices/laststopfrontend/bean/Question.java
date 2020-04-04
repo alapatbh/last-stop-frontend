@@ -2,9 +2,16 @@ package com.ls.microservices.laststopfrontend.bean;
 
 public class Question {
 	
-	/*private int questionId;
-	*/
+	private int questionId;
 	private int topicId;
+	public int getQuestionId() {
+		return questionId;
+	}
+
+	public void setQuestionId(int questionId) {
+		this.questionId = questionId;
+	}
+
 	private String question;
 	private char isPublic;
 	private char enable;

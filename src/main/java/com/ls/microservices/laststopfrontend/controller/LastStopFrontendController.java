@@ -20,7 +20,7 @@ public class LastStopFrontendController {
 	@Autowired
 	Question ques;
 	
-	@RequestMapping("/home")
+	@RequestMapping("/")
 	public String home(Model model) {
 		//System.out.println("bhanu");
 		model.addAttribute("allCourses", new RestTemplate().getForObject(Constants.REST_URL+"Courses/get", Course[].class));

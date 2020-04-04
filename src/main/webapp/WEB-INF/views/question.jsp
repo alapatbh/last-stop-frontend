@@ -42,9 +42,9 @@ table {
 							</td>
 						</tr>
 						<tr>
-							<td>Answer:</td>
+							<td >Answer:</td>
 							<td colspan="2"><textarea id="AnswerId" name="answer"
-									cols="100"></textarea>
+									cols="100" rows="6" ></textarea>
 						</tr>
 					</table>
 				</td>
@@ -66,7 +66,7 @@ table {
 			<tr>
 				<td
 					style="border: 1px solid #f2f2f2; padding: 6px; border-radius: 10px; background-color: #fcfcfc">
-					<c:out value="${ques.question}" />
+					<b><c:out value="${ques.question}" /></b>
 				</td>
 				<td
 					style="font-size: 12px; text-align: center; border-radius: 10px;"
@@ -82,7 +82,7 @@ table {
 			</tr>
 			<c:if test="${ques.answers != null }">
 				<tr>
-					<td colspan="2" style="padding: 20px; border: 1px solid #e0e0e0;">${ques.answers}</td>
+				<td colspan="2" style="padding: 20px; border: 1px solid #e0e0e0;font-family: monospace; font-size: 12px">${ques.answers}</td>
 				</tr>
 			</c:if>
 		</c:forEach>
